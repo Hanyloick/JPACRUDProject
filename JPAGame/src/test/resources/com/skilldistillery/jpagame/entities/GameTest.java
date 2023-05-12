@@ -2,7 +2,6 @@ package com.skilldistillery.jpagame.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,23 +14,23 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class GameTest {
-	private static EntityManagerFactory emf;
+	private static EntityManagerFactory entityManagerFactory;
 	private EntityManager em;
 	private Game game;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		emf = Persistence.createEntityManagerFactory("JPAGame");
+		entityManagerFactory = Persistence.createEntityManagerFactory("JPAGame");
 	}
 
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
-		emf.close();
+		entityManagerFactory.close();
 	}
 
 	@BeforeEach
 	void setUp() throws Exception {
-		em = emf.createEntityManager();
+		em = entityManagerFactory.createEntityManager();
 		game = em.find(Game.class, 1);
 	}
 
