@@ -25,8 +25,9 @@ public class Game {
 	private String urlImg;
 	private String type;
 	private String category;
-	
+	private double price; 	
 		
+	
 	public Game() {
 		super();
 	}
@@ -122,32 +123,43 @@ public class Game {
 	}
 
 
+	public double getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Game [id: ");
+		builder.append("Game [id=");
 		builder.append(id);
-		builder.append(", title: ");
+		builder.append(", title=");
 		builder.append(title);
-		builder.append(", description: ");
+		builder.append(", description=");
 		builder.append(description);
-		builder.append(", releaseYear: ");
+		builder.append(", releaseYear=");
 		builder.append(releaseYear);
-		builder.append(", rating: ");
+		builder.append(", rating=");
 		builder.append(rating);
-		builder.append(", publisher: ");
+		builder.append(", publisher=");
 		builder.append(publisher);
-		builder.append(", urlImg: ");
+		builder.append(", urlImg=");
 		builder.append(urlImg);
-		builder.append(", type: ");
+		builder.append(", type=");
 		builder.append(type);
-		builder.append(", category: ");
+		builder.append(", category=");
 		builder.append(category);
+		builder.append(", price=");
+		builder.append(price);
 		builder.append("]");
 		return builder.toString();
 	}
 
-	
-	
-	
+
+		
 }

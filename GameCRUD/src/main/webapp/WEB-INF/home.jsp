@@ -5,21 +5,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>GameCRUD</title>
 <jsp:include page="bootstrapHead.jsp" />
 </head>
 <body>
 <jsp:include page="navbar.jsp"/>
 <<div class="container-fluid">
 		<h1>Games'n'more....Games</h1>
+		
 		<form action="getGame.do" method="GET">
 			<div class="row">
 				<div class="col-sm-8">
-					Game ID: <input class="form-control" type="text" name="gameId" />
+					Game ID: <input class="form-control" type="text" name="id" />
 				</div>
 				<input class="col btn btn-primary" type="submit" value="Show Game" />
 			</div>
 		</form>
+
 
 		<table class="table table-striped table-hover">
 			<thead>
@@ -32,7 +34,7 @@
 				<c:forEach var="game" items="${gameList}">
 					<tr>
 						<td>${game.id }</td>
-						<td><a href="getGame.do?gameId=${game.id}"> ${game.title} </a></td>
+						<td><a href="getGame.do?id=${game.id}"> ${game.title} </a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

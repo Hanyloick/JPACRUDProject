@@ -44,6 +44,9 @@ class GameTest {
 	void test_Game_entity_mapping() {
 		assertNotNull(game);
 		assertEquals("test", game.getTitle());
+		assertEquals("Bethesda", game.getPublisher());
+		assertEquals("PC", game.getType());
+		assertNotNull(game.getDescription());
 	}
 
 }

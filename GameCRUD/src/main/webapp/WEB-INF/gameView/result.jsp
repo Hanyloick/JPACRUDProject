@@ -16,14 +16,20 @@
 			<h1>Game Details</h1>
 			<div>
 				<h4>${game.title}(${game.releaseYear})</h4>
-				<h5>${game.publisher}</h5>
-				<h5>Rated ${game.rating}</h5>
+				<h5>${game.publisher} ${game.price}</h5>
+				<h5>Rated ${game.rating} ${game.type}</h5>
 				<blockquote>${game.description}</blockquote>
+				<c:if test="${! empty game}">
+				<form action="editGame.do" method="GET">
+	        		<button type="submit">Edit Game</button>
+	        		<input type="hidden" name="id" value="${game.id}" />
+	    		</form>
+				</c:if>
 			</div>
 		</c:when>
 		
 		<c:otherwise>
-			<h3>Film not found.</h3>
+			<h3>Game not found.</h3>
 		</c:otherwise>
 	</c:choose>
 </div>

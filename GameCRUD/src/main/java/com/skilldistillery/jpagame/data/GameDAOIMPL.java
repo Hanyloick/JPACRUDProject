@@ -20,7 +20,7 @@ public class GameDAOIMPL implements GameDAO {
 
 	@Override
 	public Game findById(int gameId) {
-		Game idResult = entityManager.find(Game.class, 1);
+		Game idResult = entityManager.find(Game.class, gameId);
 		if (idResult != null) {
 			return idResult;
 		} else {
@@ -32,7 +32,7 @@ public class GameDAOIMPL implements GameDAO {
 	public List<Game> findAll() {
 		String jpql = "SELECT game FROM Game game";
 		List<Game> results = entityManager.createQuery(jpql, Game.class).getResultList();
-		if (results.size()>0) {
+		if (results.size() > 0) {
 			return results;
 		} else {
 			return null;
@@ -60,11 +60,7 @@ public class GameDAOIMPL implements GameDAO {
 			managedGame.setReleaseYear(game.getReleaseYear());
 			managedGame.setType(game.getType());
 			managedGame.setUrlImg(game.getUrlImg());
-			if (managedGame.equals(game)) {
-				return managedGame;
-			} else {
-				return null;
-			}
+			return managedGame;
 		} else
 			return null;
 
@@ -75,13 +71,9 @@ public class GameDAOIMPL implements GameDAO {
 		Game gameForDelete = entityManager.find(Game.class, gameId);
 		if (gameForDelete != null) {
 			entityManager.remove(gameForDelete);
-			if (entityManager.contains(gameForDelete)) {
-				// the game was found but not deleted
-				return false;
-			} else {
-				// tje game was found and deleted
-				return true;
-			}
+		} else {
+			// tje game was found and deleted
+			return true;
 		}
 		// no game was found to delete
 		return false;
