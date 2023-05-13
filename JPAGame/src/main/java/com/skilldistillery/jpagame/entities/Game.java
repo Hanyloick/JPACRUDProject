@@ -18,7 +18,7 @@ public class Game {
 	private String title;
 	private String description;
 	@Column(name="release_year")
-	private Date releaseYear;
+	private Integer releaseYear;
 	private String rating;
 	private String publisher;
 	@Column(name="game_image")
@@ -63,12 +63,12 @@ public class Game {
 	}
 
 
-	public Date getReleaseYear() {
+	public Integer getReleaseYear() {
 		return releaseYear;
 	}
 
 
-	public void setReleaseYear(Date releaseYear) {
+	public void setReleaseYear(Integer releaseYear) {
 		this.releaseYear = releaseYear;
 	}
 
@@ -159,7 +159,5 @@ public class Game {
 		builder.append("]");
 		return builder.toString();
 	}
-
-
 		
 }

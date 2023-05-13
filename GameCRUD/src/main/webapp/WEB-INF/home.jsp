@@ -10,8 +10,8 @@
 </head>
 <body>
 <jsp:include page="navbar.jsp"/>
-<<div class="container-fluid">
-		<h1>Games'n'more....Games</h1>
+<div class="container-fluid">
+		<h1>Just A Couple Games</h1>
 		
 		<form action="getGame.do" method="GET">
 			<div class="row">
@@ -34,7 +34,26 @@
 				<c:forEach var="game" items="${gameList}">
 					<tr>
 						<td>${game.id }</td>
-						<td><a href="getGame.do?id=${game.id}"> ${game.title} </a></td>
+						<!--  <td><a  href="getGame.do?id=${game.id}"> ${game.title} </a></td>-->
+						<td>
+							<form action="getGame.do?id=${game.id}" method="GET">
+	        					<button  type="submit"class="btn btn-outline-success"> ${game.title}</button>
+	        					<input type="hidden" name="id" value="${game.id}" />
+	    					</form>
+						</td>
+						
+						<td>
+							<form action="editGame.do" method="GET">
+	        					<button  type="submit"class="btn btn-outline-success">Edit Game</button>
+	        					<input type="hidden" name="id" value="${game.id}" />
+	    					</form>
+	    				</td>
+	    				<td>
+	    					<form action="deleteGame.do" method="POST">
+  								<input type="hidden" name="id" value="${game.id}"/>
+  								<input class='btn btn-danger' type="submit" value="Delete Game"/>
+  							</form>	
+	    				</td>	
 					</tr>
 				</c:forEach>
 			</tbody>

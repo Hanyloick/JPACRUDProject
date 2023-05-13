@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContexts;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;

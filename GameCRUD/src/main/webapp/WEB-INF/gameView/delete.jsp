@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Film Details</title>
+<title>Delete Confirmation</title>
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
@@ -15,7 +15,7 @@
 		<c:when test="${not empty game}">
 			<h1>Game Details</h1>
 			<div>
-				<h4>${game.title}: ( ${game.releaseYear} )</h4>
+				<h4>${game.title}(${game.releaseYear})</h4>
 				<h5>${game.publisher} ${game.price}</h5>
 				<h5>Rated ${game.rating} ${game.type}</h5>
 				<blockquote>${game.description}</blockquote>
@@ -24,12 +24,16 @@
 	        		<button type="submit">Edit Game</button>
 	        		<input type="hidden" name="id" value="${game.id}" />
 	    		</form>
+	    	<form action = "deleteGame.do" method = "POST">
+  				<input type = "hidden" name = "id" value="${game.id}"/>
+  				<input type = "submit" value = "Delete Game"/>
+  			</form>
 				</c:if>
 			</div>
 		</c:when>
 		
 		<c:otherwise>
-			<h3>Game not found.</h3>
+			<h3>This entry has been deleted.</h3>
 		</c:otherwise>
 	</c:choose>
 </div>
