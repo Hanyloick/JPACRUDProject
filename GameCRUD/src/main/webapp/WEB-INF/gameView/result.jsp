@@ -14,17 +14,41 @@
 	<c:choose>
 		<c:when test="${not empty game}">
 			<h1>Game Details</h1>
-			<div>
-				<h4>${game.title}: ( ${game.releaseYear} )</h4>
-				<h5>${game.publisher} ${game.price}</h5>
-				<h5>Rated ${game.rating} ${game.type}</h5>
-				<blockquote>${game.description}</blockquote>
-				<c:if test="${! empty game}">
-				<form action="editGame.do" method="GET">
-	        		<button type="submit">Edit Game</button>
-	        		<input type="hidden" name="id" value="${game.id}" />
-	    		</form>
-				</c:if>
+			<div class="row">
+				<div class="col-6">
+					<div class="row">
+						<h4 class="col-4 offset-3">${game.title}: </h4>
+						<h4 class="col-4">( ${game.releaseYear} )</h4>
+						<h5 class='col-4 offset-3'>${game.publisher}</h5>
+						<h5 class='col-4'>${game.price}</h5>
+						<h5 class='col-4 offset-3'>Rated:${game.rating}</h5>
+						<h5 class='col-4'>${game.type}</h5>
+						<blockquote class='col-4 offset-3'>${game.description}</blockquote>
+					</div>
+				
+					<c:if test="${! empty game}">
+					<div class='col-6 offset-6'>
+					<form action="editGame.do" method="GET">
+		        		<button type="submit" class='btn btn-success'>Edit Game</button>
+		        		<input type="hidden" name="id" value="${game.id}" />
+		    		</form>
+					</div>
+					</c:if>
+				</div>
+				<div class="col-6">
+					<div class="row">
+						<div class='image-container'>
+							<iframe
+								src='${game.urlImg}'
+								width='500'
+								height='450'
+								frameborder='0'
+								style='border:0'
+								allowfullscreen>
+							</iframe>
+						</div>
+					</div>					
+				</div>
 			</div>
 		</c:when>
 		
