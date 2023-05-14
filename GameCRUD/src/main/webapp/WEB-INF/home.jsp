@@ -11,8 +11,7 @@
 <body>
 <jsp:include page="navbar.jsp"/>
 <div class="container-fluid">
-		<h1>Just A Couple Games</h1>
-		
+		<h1>Just A Couple Games</h1>		
 		<form action="getGame.do" method="GET">
 			<div class="row">
 				<div class="col-sm-8">
@@ -21,8 +20,6 @@
 				<input class="col btn btn-primary" type="submit" value="Show Game" />
 			</div>
 		</form>
-
-
 		<table class="table table-striped table-hover">
 			<thead>
 				<tr>
@@ -34,14 +31,12 @@
 				<c:forEach var="game" items="${gameList}">
 					<tr>
 						<td>${game.id }</td>
-						<!--  <td><a  href="getGame.do?id=${game.id}"> ${game.title} </a></td>-->
 						<td>
 							<form action="getGame.do?id=${game.id}" method="GET">
 	        					<button  type="submit"class="btn btn-outline-success"> ${game.title}</button>
 	        					<input type="hidden" name="id" value="${game.id}" />
 	    					</form>
-						</td>
-						
+						</td>						
 						<td>
 							<form action="editGame.do" method="GET">
 	        					<button  type="submit"class="btn btn-outline-success">Edit Game</button>

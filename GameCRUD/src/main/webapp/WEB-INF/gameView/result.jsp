@@ -20,19 +20,28 @@
 						<h4 class="col-4 offset-3">${game.title}: </h4>
 						<h4 class="col-4">( ${game.releaseYear} )</h4>
 						<h5 class='col-4 offset-3'>${game.publisher}</h5>
-						<h5 class='col-4'>${game.price}</h5>
+						<h5 class='col-4'>$${game.price}</h5>
 						<h5 class='col-4 offset-3'>Rated:${game.rating}</h5>
 						<h5 class='col-4'>${game.type}</h5>
 						<blockquote class='col-4 offset-3'>${game.description}</blockquote>
-					</div>
-				
+					</div>				
 					<c:if test="${! empty game}">
-					<div class='col-6 offset-6'>
-					<form action="editGame.do" method="GET">
-		        		<button type="submit" class='btn btn-success'>Edit Game</button>
-		        		<input type="hidden" name="id" value="${game.id}" />
-		    		</form>
-					</div>
+						<div class='container'>
+							<div class='row'>
+								<div class='col-4 offset-3'>
+									<form action="editGame.do" method="GET">
+				        				<button type="submit" class='btn btn-success'>Edit Details</button>
+				        				<input type="hidden" name="id" value="${game.id}" />
+				    				</form>
+			    				</div>
+								<div class='col-4'>
+									<form action="deleteGame.do" method="POST">
+  										<input type="hidden" name="id" value="${game.id}"/>
+  										<input class='btn btn-danger' type="submit" value="Delete Game"/>
+  									</form>
+  								</div>
+							</div>					 						
+  						</div>		
 					</c:if>
 				</div>
 				<div class="col-6">
