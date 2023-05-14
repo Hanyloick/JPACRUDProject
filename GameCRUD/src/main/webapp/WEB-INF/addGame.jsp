@@ -53,10 +53,16 @@
 						<option value="RP">Rating Pending</option>
 						<option value="RP18">Rating Pending(18+ expected)</option>
 					</select>		 			
-			</div>							
-			<div class='col-9 offset-1'>
+			</div>
+			<div class='col-5 offset-1'>							
 				<span class='input-group-text'>Release Year: </span>	
-					<input class='form-control' name='releaseYear' type='number' min='1600'/>			
+					<input class='form-control' name='releaseYear' type='number' min='1600'/>
+			</div>
+			<div class='col-5'>
+				<span class='input-group-text'>Image URL: </span>
+					<input class='form-control' name='urlImg' type='text'/>
+			</div>									
+			<div class='col-9 offset-1'>			
 				<span class='input-group-text'>Description: </span>
 					<textarea class='form-control' rows='4' name='description'></textarea>								
 				<input type='submit' class='btn btn-success' name='Add Game'>

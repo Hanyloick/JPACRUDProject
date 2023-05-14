@@ -12,57 +12,71 @@
 <body>
 <jsp:include page="navbar.jsp"/>
 <body>
-<h1>Update Game</h1>
+	<h1>Update Game</h1>
 	<div class='container-fuild'>
 		<form action="updateGame.do" method="POST">
 				<input type='hidden' value='${game.id}' name='id'/>
-			<br>
-			<label for="Title">Title: </label>
-				<input type="text" name="title" value="${game.title}" required/>
-			<br>
-			<label for='Price'>Price: </label>
-				<input type='number' name='price' value='${game.price}'/>
-			<br>
-			<label for='Publisher'>Publisher:</label> 
-				<input type='text' name='publisher' value='${game.publisher}'/>		 
-			<br>
-			<label for='Rating'>Rating: </label>
-				<select id="rating" name="rating">
-					<option value="E">E</option>
-					<option value="E10">E10</option>
-					<option value="T">T</option>
-					<option value="A17">A17</option>
-					<option value="M18">M18</option>
-					<option value="RP">Rating Pending</option>
-					<option value="RP18">Rating Pending(18+ expected)</option>
-				</select>
-			<br>
-			<label for='Category'>Category: </label>
-				<input type='text' name='category' value='${game.category}'/>
-			<br>
-			<label for='type'>Type Of Game: </label>
-				<select name='type' required>
-					<option value='Video'>Video</option>
+		<div class='row 3'>
+			<div class='col-5 offset-1'>								
+				<span class='input-group-text'>Title:</span>
+					<input class='form-control' value='${game.title}' type="text" name="title"/>										
+			</div>
+			<div class='col-5'>
+				<span class='input-group-text'>Price: </span>
+					<input class='form-control' value='${game.price}' type='number' name='price' min='0.01' step='0.01' value='0.01'/>
+			</div>																						
+			<div class='col-5 offset-1'>
+				<span class='input-group-text'>Publisher: </span> 
+					<input class='form-control' type='text' value='${game.publisher}' name='publisher'/>
+			</div>	
+			<div class='col-5'>
+				<span class='input-group-text'>Type Of Game: </span>
+				<select class='form-control' name='type'>
+					<option selected value='Console'>Console</option>
 					<option value='Board'>Board</option>
 					<option value='Card'>Card</option>
 					<option value='Table Top'>TTRPG</option>
-				</select>		 
-			<br>
-			<label for='Release Year'>Release Year: </label>	
-				<input type='number' min='1600' name='releaseYear' value='${game.releaseYear}'>
-			<br>				
-			<label for='Description'>Description: </label>
-				<input type='text' name='description' value='${game.description}'/>
-			<br>	
-			<input type='submit' name='Update Game'>	 	
+				</select>					
+			</div>	
+			<div class='col-5 offset-1'>		
+				<span class='input-group-text'>Category: </span>
+					<input class='form-control' value='${game.category}' type='text' name='category'/>
+			</div>
+			<div class='col-5'>				
+				<span class='input-group-text'>Rating: </span>
+					<select class='form-select' id="rating" name="rating">
+						<option selected value="E">E</option>
+						<option value="E10">E10</option>
+						<option value="T">T</option>
+						<option value="A17">A17</option>
+						<option value="M18">M18</option>
+						<option value="RP">Rating Pending</option>
+						<option value="RP18">Rating Pending(18+ expected)</option>
+					</select>		 			
+			</div>
+			<div class='col-5 offset-1'>							
+				<span class='input-group-text'>Release Year: </span>	
+					<input class='form-control' value='${game.releaseYear}' name='releaseYear' type='number' min='1600'/>
+			</div>
+			<div class='col-5'>
+				<span class='input-group-text'>Image URL: </span>
+					<input class='form-control' name='urlImg' type='text' value='${game.urlImg}'/>
+			</div>					
+			<div class='col-9 offset-1'>
+				<span class='input-group-text'>Description: </span>
+					<textarea class='form-control' rows='4' name='description'>${game.description}</textarea>								
+				<input type='submit' class='btn btn-success' name='Add Game'>
+			</div>
+		</div>			
 		</form>
-		
-		
-	<form action = "deleteGame.do" method = "POST">
-  		<input type = "hidden" name = "id" value="${game.id}"/>
-  		<input type = "submit" value = "Delete Game"/>
-  	</form>
+		<div class='col-4 offset-1'>	
+			<form action = "deleteGame.do" method = "POST">
+		  		<input type = "hidden" name = "id" value="${game.id}"/>
+		  		<input class='btn btn-danger' type = "submit" value = "Delete Game"/>
+		  	</form>
+	  	</div>
 	</div>	
+		
 	
 <jsp:include page="bootstrapFoot.jsp" />	
 </body>
