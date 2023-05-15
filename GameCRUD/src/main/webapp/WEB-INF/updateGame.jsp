@@ -13,7 +13,7 @@
 <body>
 	<h1>Update Game</h1>
 	<div class='container-fuild'>
-		<form action="updateGame.do" method="POST">
+		<form action="updateGame.do"  method="POST">
 				<input type='hidden' value='${game.id}' name='id'/>
 		<div class='row 3'>
 			<div class='col-5 offset-1'>								
