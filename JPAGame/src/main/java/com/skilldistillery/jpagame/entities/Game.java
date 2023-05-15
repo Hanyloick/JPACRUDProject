@@ -1,7 +1,5 @@
 package com.skilldistillery.jpagame.entities;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +23,7 @@ public class Game {
 	private String urlImg;
 	private String type;
 	private String category;
-	private double price; 	
+	private Double price; 	
 		
 	
 	public Game() {
@@ -128,7 +126,7 @@ public class Game {
 	}
 
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 

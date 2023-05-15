@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +35,7 @@
 					<option value='Board'>Board</option>
 					<option value='Card'>Card</option>
 					<option value='Table Top'>TTRPG</option>
-				</select>					
+				</select>				
 			</div>	
 			<div class='col-5 offset-1'>		
 				<span class='input-group-text'>Category: </span>

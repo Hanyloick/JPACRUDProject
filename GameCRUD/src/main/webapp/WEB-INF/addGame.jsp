@@ -12,8 +12,8 @@
 <body>
 <jsp:include page="navbar.jsp"/>
 <body>
-	<div class='col-9 offset-3'>
-		<h1>Add A Game</h1>
+	<div class='col-3 offset-2'>
+	<h1>Add A Game</h1>
 	</div>
 	<form action="createGame.do" method="POST">
 		<div class='row 3'>
@@ -32,10 +32,11 @@
 			<div class='col-5'>
 				<span class='input-group-text'>Type Of Game: </span>
 				<select class='form-control' name='type'>
-					<option selected value='Console'>Console</option>
-					<option value='Board'>Board</option>
-					<option value='Card'>Card</option>
+					<option selected value='PC'>PC</option>
+					<option value='Board Game'>Board Game</option>
+					<option value='Collectible Card Game'>Collectible/Trading Card Game</option>
 					<option value='Table Top'>TTRPG</option>
+					<option value='Console'>Console</option>
 				</select>					
 			</div>	
 			<div class='col-5 offset-1'>		

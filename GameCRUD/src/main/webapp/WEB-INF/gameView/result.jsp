@@ -10,21 +10,23 @@
 </head>
 <body>
 <jsp:include page="../navbar.jsp"/>
-<div class="container-fluid">
+<div class="container-fluid col-8 offset-3">
 	<c:choose>
 		<c:when test="${not empty game}">
 			<h1>Game Details</h1>
 			<div class="row">
-				<div class="col-6">
-					<div class="row">
-						<h4 class="col-4 offset-3">${game.title}: </h4>
-						<h4 class="col-4">( ${game.releaseYear} )</h4>
-						<h5 class='col-4 offset-3'>${game.publisher}</h5>
+						<h4 class="col-4">${game.title}: </h4>
+				<div style="text-align:center" class="col-6">
+						<div class="row">
+						<h4 class="col-2">${game.releaseYear}</h4>
+						<h5 class='col-6'>${game.publisher}</h5>
+						<h5 class='col-3'>${game.type}</h5>
+						<h5 class='col-4 offset-3'>Rated: ${game.rating}</h5>
 						<h5 class='col-4'>$${game.price}</h5>
-						<h5 class='col-4 offset-3'>Rated:${game.rating}</h5>
-						<h5 class='col-4'>${game.type}</h5>
-						<blockquote class='col-4 offset-3'>${game.description}</blockquote>
-					</div>				
+					 </div>
+					<div class='col-12'>				
+						<blockquote >${game.description}</blockquote>
+					</div>	
 					<c:if test="${! empty game}">
 						<div class='container'>
 							<div class='row'>
@@ -44,19 +46,8 @@
   						</div>		
 					</c:if>
 				</div>
-				<div class="col-6">
-					<div class="row">
-						<div class='image-container'>
-							<iframe
-								src='${game.urlImg}'
-								width='500'
-								height='450'
-								frameborder='0'
-								style='border:0'
-								allowfullscreen>
-							</iframe>
-						</div>
-					</div>					
+				<div class="col-12">	
+					<img alt="#" src="${game.urlImg}">				
 				</div>
 			</div>
 		</c:when>

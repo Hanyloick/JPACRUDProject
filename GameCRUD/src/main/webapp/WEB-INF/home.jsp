@@ -10,7 +10,7 @@
 </head>
 <body>
 <jsp:include page="navbar.jsp"/>
-<div class="container-fluid">
+	<div class="container">
 		<h1>Just A Couple Games</h1>		
 		<form action="getGame.do" method="GET">
 			<div class="row">
@@ -37,6 +37,7 @@
 	        					<input type="hidden" name="id" value="${game.id}" />
 	    					</form>
 						</td>						
+						<td><a href='getGame.do?id=${game.id}'><img class='img-thumbnail' width='30%' alt="#" src="${game.urlImg}"></a></td>
 						<td>
 							<form action="editGame.do" method="GET">
 	        					<button  type="submit"class="btn btn-outline-success">Edit Game</button>
