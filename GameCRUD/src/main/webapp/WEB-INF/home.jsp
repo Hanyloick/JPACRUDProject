@@ -39,10 +39,9 @@
 						</td>						
 						<td><a href='getGame.do?id=${game.id}'><img class='img-thumbnail' width='30%' alt="#" src="${game.urlImg}"></a></td>
 						<td>
-							<form action="editGame.do" method="GET">
-	        					<button  type="submit"class="btn btn-outline-success">Edit Game</button>
-	        					<input type="hidden" name="id" value="${game.id}" />
-	    					</form>
+						<a href='#' 
+						onclick='javascript:window.open("/editGame.do?id=${game.id}", "_blank", "scrollbars=1,resizable=1,height=450,width=450");' 
+						title='Pop Up'><button  type="submit"class="btn btn-outline-success">Edit Game</button></a>
 	    				</td>
 	    				<td>
 	    					<form action="deleteGame.do" method="POST">
