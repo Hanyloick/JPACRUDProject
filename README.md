@@ -18,7 +18,7 @@ if the user Deletes a game the user will be notified if the operation was succes
 -JSP<br>
 -JPA<br>
 -SQL<br>
--JQL<br>
+-JPQL<br>
 -MySQL Workbench<br>
 -SpringToolSuite4<bR>
 -Gradle<br>
